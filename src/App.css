@@ -61,7 +61,8 @@
   overflow: auto;
   z-index: 200;
   top: 120px;
-  width: 320px;
+  min-width: 320px;
+  max-width: 400px;
   max-height: 320px;
   background: #FFF;
 }

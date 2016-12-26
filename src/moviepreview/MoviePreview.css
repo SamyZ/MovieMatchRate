@@ -5,6 +5,7 @@
   justify-content: flex-start;
   padding: 5px 5px 0px 5px;
   z-index: 300;
+  height: 72px;
 }
 
 .Movie-preview:last-of-type {
