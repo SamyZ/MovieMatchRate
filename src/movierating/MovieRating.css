@@ -1,0 +1,40 @@
+.Movie-rating {
+  padding: 5px 5px;
+}
+
+.Movie-rating:last-of-type {
+  padding-bottom: 10px;
+}
+
+.Movie-rating-label {
+  font-size: 17px;
+  padding-bottom: 2px;
+}
+
+.Movie-rating-progress-bar {
+  background-color: #ececec;
+  padding: 1px;
+  width: 145px;
+}
+
+.Movie-rating-progress-bar div {
+  background-color: #455f70;
+  height: 15px;
+  animation:loadbar forwards 1s;
+}
+
+@keyframes loadbar {
+  0% { width: 0%; }
+}
+
+.Movie-rating-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.Movie-rating-bar-value {
+  font-size: 12px;
+  color: #FFF;
+}

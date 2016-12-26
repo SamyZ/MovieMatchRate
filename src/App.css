@@ -1,0 +1,72 @@
+.App-header {
+  position: absolute;
+  top: 0;
+  height: 60px;
+  width: 100%;
+  color: white;
+  background: #ff5722;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.App-main {
+  padding-top: 60px;
+  overflow: hidden;
+}
+
+.App-main-container {
+  overflow-y: auto;
+  position: absolute;
+  top: 120px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.App-main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.App-form {
+  background-color: #FFF;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #ececec;
+}
+
+.App-search-icon {
+  opacity: 0.5;
+  padding-left: 16px;
+}
+
+.App-search-input {
+  color: #434343;
+  padding-left: 8px;
+  width: 250px;
+  font: inherit;
+  border: 0;
+  outline: none;
+}
+
+.App-search-autocomplete {
+  display: block;
+  position: absolute;
+  overflow: auto;
+  z-index: 200;
+  top: 120px;
+  width: 320px;
+  max-height: 320px;
+  background: #FFF;
+}
+
+.App-movie-recommendations {
+  font-size: 16px;
+  font-weight: 600;
+}

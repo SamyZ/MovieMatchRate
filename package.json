@@ -1,0 +1,28 @@
+{
+  "name": "MovieMatchRate",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "react-scripts": "0.8.4",
+    "sw-precache": "^4.2.3",
+    "babel-eslint": "^7.1.1",
+    "eslint": "^3.9.1",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.1.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.6.0"
+  },
+  "dependencies": {
+    "lodash.debounce": "^4.0.8",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "react-select": "^1.0.0-rc.2",
+    "whatwg-fetch": "^2.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build && sw-precache --config=sw-precache-config.js",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
