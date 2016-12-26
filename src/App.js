@@ -35,24 +35,10 @@ class App extends React.Component {
   }
 
   handleRecommendationsSearch = (movie) => {
-    movie.recommendations.results.splice(0, 5).forEach((recommendedMovie) => {
-      loadDetails(recommendedMovie.id).then((recommendedMovieDetails) => {
-        let movieDetails = recommendedMovieDetails;
+    movie.recommendations.forEach((recommendedMovie) => {
+      loadRatings(recommendedMovie.title).then((recommendedMovieRatings) => {
         this.setState((prevState) => {
-          if (prevState.recommendations.has(movieDetails.imdb_id)) {
-            movieDetails = { ...movieDetails, ...prevState.recommendations.get(movieDetails.imdb_id) }
-          }
-          prevState.recommendations.set(movieDetails.imdb_id, movieDetails)
-          return ({ recommendations: prevState.recommendations });
-        });
-      })
-      loadRatings(recommendedMovie.title).then((recommendedMovieDetails) => {
-        let movieDetails = recommendedMovieDetails;
-        this.setState((prevState) => {
-          if (prevState.recommendations.has(movieDetails.imdbID)) {
-            movieDetails = { ...movieDetails, ...prevState.recommendations.get(movieDetails.imdbID) }
-          }
-          prevState.recommendations.set(movieDetails.imdbID, movieDetails)
+          prevState.recommendations.set(recommendedMovieRatings.imdbID, { ...recommendedMovie, ...recommendedMovieRatings})
           return ({ recommendations: prevState.recommendations });
         });
       })
@@ -77,8 +63,11 @@ class App extends React.Component {
   }
 
   onDetailedMovieClick = (movie) => {
-    this.setState(() => ({ mainMovie: movie, searchedMovies: [], recommendations: new Map() }))
-    this.handleRecommendationsSearch(movie);
+    this.setState(() => ({ mainMovie: movie, recommendations: new Map() }));
+    loadDetails(movie.id).then((detailledMovie) => {
+      this.setState((prevState) => ({ mainMovie: { ...prevState.mainMovie, ...detailledMovie } }));
+      this.handleRecommendationsSearch(detailledMovie);
+    });
   }
 
   onFormSubmit = (event) => {

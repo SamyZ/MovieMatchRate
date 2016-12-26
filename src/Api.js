@@ -72,6 +72,10 @@ export const loadDetails = (id) => {
   return fetch(requestUrl, {
     headers: defaultHeaders,
   }).then((response) => response.json())
+    .then((json) => {
+      json.recommendations = json.recommendations.results.splice(0, 10); // Flattenning recommendations
+      return json;
+    })
     .catch((ex) => {
       console.log('parsing failed', ex)
     })
