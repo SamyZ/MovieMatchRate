@@ -1,9 +1,18 @@
+.App {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+}
+
 .App-header {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 60px;
+  height: 50px;
   width: 100%;
   color: white;
   background: #ff5722;
@@ -12,21 +21,23 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 100;
 }
 
 .App-main {
-  padding-top: 60px;
+  padding-top: 50px;
   overflow: hidden;
 }
 
 .App-main-container {
-  overflow-y: auto;
   position: absolute;
-  top: 120px;
+  top: 100px;
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+.App-main-container-fixed {
+  top: 50px;
 }
 
 .App-main-content {
@@ -37,10 +48,21 @@
 
 .App-form {
   background-color: #FFF;
-  height: 60px;
+  height: 50px;
   display: flex;
   justify-content: center;
   border-bottom: 1px solid #ececec;
+}
+
+.App-form-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 100;
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
 }
 
 .App-search-icon {
@@ -65,11 +87,15 @@
   margin-right: auto;
   overflow-y: auto;
   z-index: 200;
-  top: 120px;
+  top: 100px;
   min-width: 320px;
   max-width: 400px;
   max-height: 320px;
   background: #FFF;
+}
+
+.App-search-autocomplete-fixed {
+  top: 50px;
 }
 
 @media (max-width: 320px) {

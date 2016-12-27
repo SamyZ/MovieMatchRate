@@ -15,8 +15,10 @@ class App extends React.Component {
       mainMovie: {},
       recommendations: new Map(),
       searchValue: '',
+      fixedSearchBar: false,
     };
     this.onSearch = debounce(this.onSearch, 500);
+    this.handleScroll = debounce(this.handleScroll, 15);
   }
 
   onSearch = (value) => {
@@ -31,6 +33,14 @@ class App extends React.Component {
       this.onSearch(event.target.value);
     } else {
       this.setState({ searchedMovies: [], onSearch: false, searchValue: event.target.value })
+    }
+  }
+
+  handleScroll = () => {
+    if (this.scrollContent.scrollTop > 50) {
+      this.setState({ fixedSearchBar: true })
+    } else {
+      this.setState({ fixedSearchBar: false })
     }
   }
 
@@ -78,21 +88,21 @@ class App extends React.Component {
   render() {
     const recommendationKeys = [...this.state.recommendations.keys()];
     return (
-      <div>
+      <div className="App" onScroll={this.handleScroll} ref={(ref) => this.scrollContent = ref} >
         <header className="App-header">
           <h1>{'Movie match & rate'}</h1>
         </header>
         <main className="App-main">
-          <form role="form" className="App-form" onSubmit={this.onFormSubmit}>
+          <form role="form" className={`App-form${this.state.fixedSearchBar ? ' App-form-fixed' : ''}`} onSubmit={this.onFormSubmit}>
             <img className="App-search-icon"  src={searchIcon} alt=""/>
             <input type="search" className="App-search-input" placeholder="Search" onChange={this.onInputChange} value={this.state.searchValue}/>
-            <div className="App-search-autocomplete" >
+            <div className={`App-search-autocomplete${this.state.fixedSearchBar ? ' App-search-autocomplete-fixed': ''}`}>
               {this.state.onSearch && this.state.searchValue.length > 2 && this.state.searchedMovies.map((searchedMovie) => (
                 <MoviePreview key={searchedMovie.id} movie={searchedMovie} onClick={this.onSearchedMovieClick}/>
               ))}
             </div>
           </form>
-          <div className="App-main-container">
+          <div className={`App-main-container${this.state.fixedSearchBar ? ' App-main-container-fixed': ''}`}>
             <div className="App-main-content">
               {this.state.mainMovie.title ?
                 <MovieCard key={this.state.mainMovie.id} movie={this.state.mainMovie} onClick={this.onDetailedMovieClick}/>
