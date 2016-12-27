@@ -116,6 +116,19 @@ class App extends React.Component {
                 <MovieCard key={id} movie={this.state.recommendations.get(id)} onClick={this.onDetailedMovieClick} />
               ))}
             </div>
+            <footer className="App-footer">
+              <img
+                src="https://www.themoviedb.org/assets/bb45549239e25f1770d5f76727bcd7c0/images/v4/logos/408x161-powered-by-rectangle-blue.png"
+                width="58"
+                height="23"
+                alt="TMdb Logo"
+              />
+              <p className="App-footer-tmdb">{'This product uses the TMDb API but is not endorsed or certified by TMDb.'}</p>
+              <p className="App-footer-omdb">
+                <span>{'Ratings provided thanks to '}</span>
+                <a href="https://www.omdbapi.com/">{'omdbapi.com'}</a>
+              </p>
+            </footer>
           </div>
         </main>
       </div>

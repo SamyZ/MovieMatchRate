@@ -24,12 +24,14 @@
   top: 100px;
   left: 0;
   right: 0;
-}
-
-.App-main-content {
+  bottom: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.App-main-content {
+  flex: 1 0 auto;
 }
 
 .App-form {
@@ -93,4 +95,25 @@
 .App-movie-recommendations {
   font-size: 16px;
   font-weight: 600;
+  text-align: center;
+}
+
+.App-footer {
+  flex-shrink: 0;
+  background-color: #FFF;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 9px;
+}
+
+.App-footer-tmdb {
+  padding-top: 4px;
+}
+
+.App-footer-omdb {
+  padding-top: 2px;
 }
