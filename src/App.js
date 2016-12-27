@@ -92,7 +92,7 @@ class App extends React.Component {
         <header className="App-header">
           <h1>{'Movie match & rate'}</h1>
         </header>
-        <main className="App-main">
+        <main>
           <form role="form" className={`App-form${this.state.fixedSearchBar ? ' App-form-fixed' : ''}`} onSubmit={this.onFormSubmit}>
             <img className="App-search-icon"  src={searchIcon} alt=""/>
             <input type="search" className="App-search-input" placeholder="Search" onChange={this.onInputChange} value={this.state.searchValue}/>
