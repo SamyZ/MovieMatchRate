@@ -36,10 +36,6 @@
   right: 0;
 }
 
-.App-main-container-fixed {
-  top: 50px;
-}
-
 .App-main-content {
   display: flex;
   flex-direction: column;

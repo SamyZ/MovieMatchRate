@@ -102,7 +102,7 @@ class App extends React.Component {
               ))}
             </div>
           </form>
-          <div className={`App-main-container${this.state.fixedSearchBar ? ' App-main-container-fixed': ''}`}>
+          <div className="App-main-container">
             <div className="App-main-content">
               {this.state.mainMovie.title ?
                 <MovieCard key={this.state.mainMovie.id} movie={this.state.mainMovie} onClick={this.onDetailedMovieClick}/>
