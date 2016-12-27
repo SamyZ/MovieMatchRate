@@ -12,7 +12,7 @@ const MovieRating = ({ label, value, color }) => {
   let ratingStyle = { "width": rating };
   if (!value || value === 'N/A') {
     rating = 'N/A';
-    ratingStyle = { "width": "50%", "background-color": "grey" }
+    ratingStyle = { "width": "50%", "backgroundColor": "grey" }
   }
   return (
     <div className="Movie-rating">
