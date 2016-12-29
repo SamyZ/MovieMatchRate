@@ -10,15 +10,15 @@ module.exports = {
   runtimeCaching: [
     {
       urlPattern: /^https:\/\/www\.omdbapi\.com\/*/,
-      handler: 'cacheFirst'
+      handler: 'fastest'
     },
     {
       urlPattern: /^https:\/\/api\.themoviedb\.org\/*/,
-      handler: 'cacheFirst'
+      handler: 'fastest'
     },
     {
       urlPattern: /^https:\/\/image\.tmdb\.org\/*/,
-      handler: 'cacheFirst'
+      handler: 'fastest'
     }
   ],
 };
