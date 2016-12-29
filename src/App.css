@@ -111,6 +111,17 @@
   font-size: 9px;
 }
 
+.App-footer-meta-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 12px;
+}
+
+.App-footer-meta {
+  padding-right: 8px;
+}
+
 .App-footer-tmdb {
   padding-top: 4px;
 }

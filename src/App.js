@@ -18,7 +18,7 @@ class App extends React.Component {
       searchValue: '',
       fixedSearchBar: false,
     };
-    this.onSearch = debounce(this.onSearch, 500);
+    this.onSearch = debounce(this.onSearch, 200);
     this.handleScroll = debounce(this.handleScroll, 15);
   }
 
@@ -118,7 +118,10 @@ class App extends React.Component {
               ))}
             </div>
             <footer className="App-footer">
-              <img src={themoviedblogo} width="58" height="23" alt="TMdb Logo" />
+              <p className="App-footer-meta-logo">
+                <span className="App-footer-meta">{'Similar movies recommendations'}</span>
+                <img src={themoviedblogo} width="58" height="23" alt="TMdb Logo" />
+              </p>
               <p className="App-footer-tmdb">{'This product uses the TMDb API but is not endorsed or certified by TMDb.'}</p>
               <p className="App-footer-omdb">
                 <span>{'Ratings provided thanks to '}</span>
