@@ -1,4 +1,4 @@
-[Movie match & rate](https://moviematchrate.firebaseapp.com/)
+[Movie match & rate](https://moviematchrate.com/)
 
 This is a simple react [Progressive Web App](https://developers.google.com/web/progressive-web-apps)
 
