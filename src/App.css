@@ -39,6 +39,7 @@
   height: 50px;
   display: flex;
   justify-content: center;
+  align-items: center;
   border-bottom: 1px solid #ececec;
 }
 
@@ -55,14 +56,14 @@
 
 .App-search-icon {
   opacity: 0.5;
-  padding-left: 16px;
 }
 
 .App-search-input {
   color: #434343;
-  padding-left: 8px;
+  padding: 1px 0 0 8px;
   width: 250px;
   font: inherit;
+  font-size: 18px;
   border: 0;
   outline: none;
 }

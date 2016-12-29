@@ -4,7 +4,8 @@ import { search, loadDetails, loadRatings } from './Api';
 import MoviePreview from './moviepreview/MoviePreview';
 import MovieCard from './moviecard/MovieCard';
 import './App.css';
-import searchIcon from './ressources/search-icon.svg';
+import searchIcon from './ressources/searchIcon.svg';
+import themoviedblogo from './ressources/themoviedblogo.svg';
 
 class App extends React.Component {
   constructor(props) {
@@ -94,7 +95,7 @@ class App extends React.Component {
         </header>
         <main>
           <form role="form" className={`App-form${this.state.fixedSearchBar ? ' App-form-fixed' : ''}`} onSubmit={this.onFormSubmit}>
-            <img className="App-search-icon"  src={searchIcon} alt=""/>
+            <img className="App-search-icon" src={searchIcon} width="24" height="24" alt=""/>
             <input type="search" className="App-search-input" placeholder="Search" onChange={this.onInputChange} value={this.state.searchValue}/>
             <div className={`App-search-autocomplete${this.state.fixedSearchBar ? ' App-search-autocomplete-fixed': ''}`}>
               {this.state.onSearch && this.state.searchValue.length > 2 && this.state.searchedMovies.map((searchedMovie) => (
@@ -117,12 +118,7 @@ class App extends React.Component {
               ))}
             </div>
             <footer className="App-footer">
-              <img
-                src="https://www.themoviedb.org/assets/bb45549239e25f1770d5f76727bcd7c0/images/v4/logos/408x161-powered-by-rectangle-blue.png"
-                width="58"
-                height="23"
-                alt="TMdb Logo"
-              />
+              <img src={themoviedblogo} width="58" height="23" alt="TMdb Logo" />
               <p className="App-footer-tmdb">{'This product uses the TMDb API but is not endorsed or certified by TMDb.'}</p>
               <p className="App-footer-omdb">
                 <span>{'Ratings provided thanks to '}</span>
