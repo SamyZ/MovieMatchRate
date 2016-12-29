@@ -4,6 +4,8 @@ This is a simple react [Progressive Web App](https://developers.google.com/web/p
 
 Search for a movie, get its similar matches and their rankings on popular websites!
 
+Thanks to Samuel Boucher for the awesome logo / icon.
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
