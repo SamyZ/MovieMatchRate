@@ -19,7 +19,7 @@ class App extends React.Component {
       fixedSearchBar: false,
     };
     this.onSearch = debounce(this.onSearch, 200);
-    this.handleScroll = debounce(this.handleScroll, 15);
+    this.handleScroll = debounce(this.handleScroll, 20);
   }
 
   onSearch = (value) => {
@@ -38,9 +38,9 @@ class App extends React.Component {
   }
 
   handleScroll = () => {
-    if (this.scrollContent.scrollTop > 50) {
+    if (!this.state.fixedSearchBar && this.scrollContent.scrollTop > 50) {
       this.setState({ fixedSearchBar: true })
-    } else {
+    } else if (this.state.fixedSearchBar && this.scrollContent.scrollTop < 51) {
       this.setState({ fixedSearchBar: false })
     }
   }
