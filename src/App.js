@@ -96,7 +96,7 @@ class App extends React.Component {
         <main>
           <form role="form" className={`App-form${this.state.fixedSearchBar ? ' App-form-fixed' : ''}`} onSubmit={this.onFormSubmit}>
             <img className="App-search-icon" src={searchIcon} width="24" height="24" alt=""/>
-            <input type="search" className="App-search-input" placeholder="Search" onChange={this.onInputChange} value={this.state.searchValue}/>
+            <input type="search" className="App-search-input" placeholder="Search" onChange={this.onInputChange} value={this.state.searchValue} autoFocus/>
             <div className={`App-search-autocomplete${this.state.fixedSearchBar ? ' App-search-autocomplete-fixed': ''}`}>
               {this.state.onSearch && this.state.searchValue.length > 2 && this.state.searchedMovies.map((searchedMovie) => (
                 <MoviePreview key={searchedMovie.id} movie={searchedMovie} onClick={this.onSearchedMovieClick}/>
