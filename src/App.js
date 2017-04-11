@@ -19,7 +19,7 @@ class App extends React.Component {
       fixedSearchBar: false,
     };
     this.onSearch = debounce(this.onSearch, 200);
-    this.handleScroll = debounce(this.handleScroll, 20);
+    this.handleScroll = debounce(this.handleScroll, 10);
   }
 
   onSearch = (value) => {

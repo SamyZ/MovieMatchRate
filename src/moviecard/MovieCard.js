@@ -10,6 +10,10 @@ const proptypes = {
 };
 
 const MovieCard = ({ onClick, movie }) => {
+  let tomatoRating = movie.tomatoRating * 10;
+  if (Array.isArray(movie.Ratings) && movie.Ratings.length > 2 && movie.Ratings[1].Value.indexOf('%') !== -1) {
+    tomatoRating = movie.Ratings[1].Value.substring(0, movie.Ratings[1].Value.indexOf('%'))
+  }
   return (
   <div className="Movie-card" onClick={() => onClick(movie)}>
     <div className="Movie-card-poster-title-ratings" >
@@ -17,8 +21,8 @@ const MovieCard = ({ onClick, movie }) => {
       <div className="Movie-card-title-ratings" >
         <p className="Movie-card-title">{movie.title}</p>
         <MovieRating label="IMDb" value={movie.imdbRating * 10} color="darkorange" />
-        <MovieRating label="Tomatometer" value={movie.tomatoMeter} color="red" />
-        <MovieRating label="Audience Rating" value={movie.tomatoRating * 10} color="green" />
+        <MovieRating label="Rotten Tomatoes" value={tomatoRating} color="red" />
+        {/* <MovieRating label="Audience Rating" value={0} color="green" /> */}
         <MovieRating label="Metascore" value={movie.Metascore} color="#1c85b8" />
       </div>
     </div>

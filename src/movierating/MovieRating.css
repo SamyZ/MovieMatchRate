@@ -1,5 +1,5 @@
 .Movie-rating {
-  padding: 5px 5px;
+  padding: 8px 5px;
 }
 
 .Movie-rating:last-of-type {
@@ -7,19 +7,19 @@
 }
 
 .Movie-rating-label {
-  font-size: 17px;
+  font-size: 16px;
   padding-bottom: 2px;
 }
 
 .Movie-rating-progress-bar {
-  background-color: #ececec;
+  background-color: #E0E0E0;
   padding: 1px;
   width: 145px;
 }
 
 .Movie-rating-progress-bar div {
   background-color: #455f70;
-  height: 15px;
+  height: 18px;
   animation:loadbar forwards 1s;
 }
 
